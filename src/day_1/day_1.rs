@@ -38,7 +38,6 @@ fn day_1_2() -> u32 {
         prev = current;
     }
 
-    
     result
 }
 
