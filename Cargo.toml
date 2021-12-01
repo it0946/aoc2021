@@ -4,7 +4,9 @@ version = "0.1.0"
 edition = "2021"
 authors = ["it"]
 
-[dependencies]
+[lib]
+name = "util"
+path = "src/util.rs"
 
 [[bin]]
 name = "day_1"
