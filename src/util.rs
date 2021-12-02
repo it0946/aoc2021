@@ -1,14 +1,15 @@
 use std::{io::{BufReader, Read}, fs::File, fmt::Display};
 
 pub trait Day<In, Out: Display> {
-    fn parse_input(input: String) -> Vec<In>;
+    fn parse_input(_input: String) -> Option<In> { None }
     
-    fn part_1(input: &[In]) -> Out;
-    fn part_2(input: &[In]) -> Out;
+    fn part_1(input: &In) -> Out;
+    fn part_2(input: &In) -> Out;
     
     fn run(fp: &'static str) {
         let input = read_input(fp);
         let input = Self::parse_input(input);
+        let input = input.unwrap();
     
         println!("part 1: {}\npart 2: {}", Self::part_1(&input), Self::part_2(&input));    
     }
